@@ -1,4 +1,5 @@
 const { Schema, model } = require("mongoose");
+const Profile = require("./Profile");
 
 const courseSchema = new Schema({
   name: {
@@ -19,8 +20,13 @@ const courseSchema = new Schema({
     type: String,
     required: true,
   },
-  teacherId: {
-    type: Number,
+  //TODO: fix linking to teacher
+  // teacherId: {
+  //   type: Number,
+  //   required: true,
+  // },
+  teacherName: {
+    type: String,
     required: true,
   },
   length: {
@@ -31,7 +37,8 @@ const courseSchema = new Schema({
     type: String,
     required: true,
   },
-  students: [Number],
+  //TODO: fix showing array of students in course
+  students: [Profile],
 });
 
 const Course = model("Course", courseSchema);

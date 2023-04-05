@@ -1,5 +1,10 @@
 const { gql } = require("apollo-server-express");
 
+
+//TODO: finish mutations for add and remove courses
+//uncommment code in resolvers
+//test in playground
+
 const typeDefs = gql`
   type Profile {
     _id: ID
@@ -43,7 +48,6 @@ const typeDefs = gql`
 
     # addCourse(profileId: ID!, skill: String!): Profile
     removeProfile: Profile
-    # removeSkill(skill: String!): Profile
   }
 `;
 
