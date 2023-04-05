@@ -1,13 +1,22 @@
 const { Schema, model } = require("mongoose");
 const bcrypt = require("bcrypt");
-const Class = require("./Class");
 
 const profileSchema = new Schema({
-  name: {
+  username: {
     type: String,
     required: true,
     unique: true,
     trim: true,
+  },
+  name: {
+    type: String,
+    required: true,
+    trim: true,
+  },
+  profileType: {
+    type: String,
+    enum: ["teacher", "student"],
+    required: true,
   },
   email: {
     type: String,
@@ -20,10 +29,10 @@ const profileSchema = new Schema({
     required: true,
     minlength: 5,
   },
-  classes: [
+  courses: [
     {
       type: Schema.Types.ObjectId,
-      ref: "Class",
+      ref: "Course",
     },
   ],
 });
