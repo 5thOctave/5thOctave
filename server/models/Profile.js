@@ -10,7 +10,6 @@ const profileSchema = new Schema({
   },
   profileType: {
     type: String,
-    enum: ["teacher", "student"],
   },
   email: {
     type: String,
