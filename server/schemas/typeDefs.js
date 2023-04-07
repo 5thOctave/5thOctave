@@ -1,6 +1,5 @@
 const { gql } = require("apollo-server-express");
 
-
 //TODO: finish mutations for add and remove courses
 //uncommment code in resolvers
 //test in playground
@@ -22,10 +21,10 @@ const typeDefs = gql`
     level: String
     instrument: String
     description: String
-    teacherId: ID
+    teacherId: Profile
     length: Int
     schedule: String
-    students: [ID]
+    students: [Profile]
   }
 
   type Auth {
@@ -43,10 +42,10 @@ const typeDefs = gql`
   }
 
   type Mutation {
-    addProfile(username: String!, name: String!, profileType: String!, email: String!, password: String!): Auth
+    addProfile(name: String!, profileType: String, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
-
-    # addCourse(profileId: ID!, skill: String!): Profile
+    addCourse(name: String!, level: String): Course
+    updateCourse(courseId: ID!, studentId: ID): Course
     removeProfile: Profile
   }
 `;

@@ -4,41 +4,48 @@ const Profile = require("./Profile");
 const courseSchema = new Schema({
   name: {
     type: String,
-    required: true,
+    // required: true,
     trim: true,
   },
   level: {
     type: String,
-    required: true,
+    // required: true,
     enum: ["beginner", "intermediate", "advanced"],
   },
   instrument: {
     type: String,
-    required: true,
+    // required: true,
   },
   description: {
     type: String,
-    required: true,
+    // required: true,
   },
   //TODO: fix linking to teacher
   // teacherId: {
   //   type: Number,
   //   required: true,
   // },
-  teacherName: {
-    type: String,
-    required: true,
+  teacherId: {
+    type: Schema.Types.ObjectId,
+    ref: "Profile",
+    // required: true,
   },
   length: {
     type: Number,
-    required: true,
+    // required: true,
   },
   schedule: {
     type: String,
-    required: true,
+    // required: true,
   },
   //TODO: fix showing array of students in course
-  students: [Profile],
+  students: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "Profile",
+      // required: true,
+    },
+  ],
 });
 
 const Course = model("Course", courseSchema);

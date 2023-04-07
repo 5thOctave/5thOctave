@@ -8,7 +8,7 @@ const resolvers = {
       return Profile.find();
     },
     courses: async () => {
-      return Course.find();
+      return Course.find().populate("teacherId").populate("students");
     },
     profile: async (parent, { profileId }) => {
       return Profile.findOne({ _id: profileId });
@@ -32,11 +32,13 @@ const resolvers = {
 
       return { token, profile };
     },
-    // addCourse: async (parent, args) => {
-    //   const course = await Course.create(args);
-
-    //   return { course };
-    // },
+    addCourse: async (parent, args, context) => {
+      if (context.user) {
+        const course = await Course.create({ teacherId: context.user._id, ...args });
+        return { course };
+      }
+      throw new AuthenticationError("You need to be logged in!");
+    },
     login: async (parent, { email, password }) => {
       const profile = await Profile.findOne({ email });
 
@@ -64,6 +66,9 @@ const resolvers = {
     // removeCourse: async (parent, { courseId }) => {
     //   return Course.findOneAndUpdate({ _id: courseId }, { $pull: { courses: courseId } }, { new: true });
     // },
+    updateCourse: async (parent, { courseId, studentId }) => {
+      return Course.findOneAndUpdate({ _id: courseId }, { $addToSet: { students: studentId } }, { new: true });
+    },
   },
 };
 
