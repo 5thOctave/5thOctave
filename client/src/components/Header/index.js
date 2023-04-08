@@ -21,9 +21,9 @@ const Header = () => {
         <div>
           {Auth.loggedIn() ? (
             <>
-              <Link className="border-4 border-[#FDF0D5] rounded-lg bg-[#C1121F] p-2 text-[#FDF0D5] stylish" to="/me">
-                View My Profile
-              </Link>
+              <button className="border-4 border-[#FDF0D5] rounded-lg bg-[#C1121F] p-2 text-[#FDF0D5] stylish mr-8">
+                <Link to="/me">My Profile</Link>
+              </button>
               <button className="border-4 border-[#FDF0D5] rounded-lg bg-[#C1121F] p-2 text-[#FDF0D5] stylish" onClick={logout}>
                 Sign Out
               </button>

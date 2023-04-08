@@ -8,7 +8,7 @@ const CourseList = ({ profiles, title }) => {
 
   return (
     <div className="bg-[#FDF0D5]">
-    <h2>courses will display here</h2>
+    <h2 className="stylish text-3xl font-bold ml-8">courses will display here</h2>
       <h3 className="text-primary">{title}</h3>
       <div className="flex-row justify-space-between my-4">
         {profiles &&

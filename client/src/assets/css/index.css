@@ -13,13 +13,6 @@
 }
 
 
-.serif {
-    font-family: serif;
-}
-
-.stylish {
-    font-family: stylish;
-}
 
 button:hover {
     transform: scale(0.9);
@@ -32,10 +25,19 @@ input {
 
 option {
     text-align: center;
+
 }
 
 .logo {
     /* color: transparent; */
     /* font-size: 3.5rem; */
     -webkit-text-stroke: 1px #c1121f;
+}
+    
+.serif {
+    font-family: serif;
+}
+    
+.stylish {
+    font-family: stylish;
 }
