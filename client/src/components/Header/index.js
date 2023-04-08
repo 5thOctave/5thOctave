@@ -9,36 +9,36 @@ const Header = () => {
     Auth.logout();
   };
   return (
-    <div className="flex justify-evenly align-middle mt-4">
-      <Link className="" to="/">
-        <h1 className="text-3xl">5th Octave</h1>
-      </Link>
-      <form>
-        <input className="border-2 border-black rounded-lg" type="text" />
-        <button className=" ml-2 border-2 border-black rounded-lg bg-sky-500 p-2">Submit</button>
-      </form>
-      <div>
-        {Auth.loggedIn() ? (
-          <>
-            <Link className="border-2 border-black rounded-lg bg-sky-500 p-2" to="/me">
-              View My Profile
-            </Link>
-            <button className="border-2 border-black rounded-lg bg-sky-500 p-2" onClick={logout}>
-              Logout
-            </button>
-          </>
-        ) : (
-          <>
-            <button className="border-2 border-black rounded-lg bg-sky-500 p-2">
-              <Link to="/login">Login</Link>
-            </button>
-            <button className=" ml-2 border-2 border-black rounded-lg bg-sky-500 p-2">
-              <Link className="" to="/signup">
-                Signup
+    <div>
+      <div className="bg-[#669BBC] flex flex-row flex-wrap justify-between p-8 items-center">
+        <Link className="" to="/">
+          <h1 className="text-6xl stylish font-bold text-[#FDF0D5] logo">🎷5th Octave</h1>
+        </Link>
+        <form className="flex flex-row gap-2 items-center">
+          <input className="border-2 rounded-lg stylish font-bold bg-[#FDF0D5]" type="text" />
+          <button className="border-4 border-[#FDF0D5] rounded-lg bg-[#C1121F] p-2 text-[#FDF0D5] stylish">Search</button>
+        </form>
+        <div>
+          {Auth.loggedIn() ? (
+            <>
+              <Link className="border-4 border-[#FDF0D5] rounded-lg bg-[#C1121F] p-2 text-[#FDF0D5] stylish" to="/me">
+                View My Profile
               </Link>
-            </button>
-          </>
-        )}
+              <button className="border-4 border-[#FDF0D5] rounded-lg bg-[#C1121F] p-2 text-[#FDF0D5] stylish" onClick={logout}>
+                Sign Out
+              </button>
+            </>
+          ) : (
+            <div className="">
+              <button className="border-4 border-[#FDF0D5] rounded-lg bg-[#C1121F] p-2 text-[#FDF0D5] stylish mr-8">
+                <Link to="/login">Sign In</Link>
+              </button>
+              <button className="border-4 border-[#FDF0D5] rounded-lg bg-[#C1121F] p-2 text-[#FDF0D5] stylish">
+                <Link to="/signup">Join 5th Octave</Link>
+              </button>
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );

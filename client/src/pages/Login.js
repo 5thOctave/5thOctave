@@ -41,49 +41,26 @@ const Login = (props) => {
   };
 
   return (
-    <main className="flex-row justify-center mb-4">
-      <div className="col-12 col-lg-10">
-        <div className="card">
-          <h4 className="card-header bg-dark text-light p-2">Login</h4>
-          <div className="card-body">
+    <main className="p-8 stylish">
+      <div className="">
+        <div className="flex flex-col">
+          <h4 className="text-3xl font-bold">Sign In</h4>
+          <div className="">
             {data ? (
               <p>
-                Success! You may now head{' '}
-                <Link to="/">back to the homepage.</Link>
+                Success! You may now head <Link to="/">back to the homepage.</Link>
               </p>
             ) : (
-              <form onSubmit={handleFormSubmit}>
-                <input
-                  className="form-input"
-                  placeholder="Your email"
-                  name="email"
-                  type="email"
-                  value={formState.email}
-                  onChange={handleChange}
-                />
-                <input
-                  className="form-input"
-                  placeholder="******"
-                  name="password"
-                  type="password"
-                  value={formState.password}
-                  onChange={handleChange}
-                />
-                <button
-                  className="btn btn-block btn-info"
-                  style={{ cursor: 'pointer' }}
-                  type="submit"
-                >
+              <form onSubmit={handleFormSubmit} className="flex flex-col w-40">
+                <input className="p-1 rounded-lg border-2 border-[#669BBC]" placeholder="Email" name="email" type="email" value={formState.email} onChange={handleChange} />
+                <input className="p-1 rounded-lg border-2 border-[#669BBC]" placeholder="Password" name="password" type="password" value={formState.password} onChange={handleChange} />
+                <button className="p-1 border-4 border-[#669BBC] rounded-lg bg-[#C1121F] text-[#FDF0D5]" style={{ cursor: "pointer" }} type="submit">
                   Submit
                 </button>
               </form>
             )}
 
-            {error && (
-              <div className="my-3 p-3 bg-danger text-white">
-                {error.message}
-              </div>
-            )}
+            {error && <div className="my-3 p-3">{error.message}</div>}
           </div>
         </div>
       </div>

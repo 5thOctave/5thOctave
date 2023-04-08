@@ -50,32 +50,33 @@ const Signup = () => {
   };
 
   return (
-    <main className="flex-row justify-center mb-4">
-      <div className="col-12 col-lg-10">
-        <div className="card">
-          <h4 className="card-header bg-dark text-light p-2">Sign Up</h4>
-          <div className="card-body">
+    <main className="p-8 stylish">
+      <div>
+        <div className="flex flex-col">
+          <h4 className="text-3xl font-bold">Create your 5th Octave Profile!</h4>
+          <div>
             {data ? (
               <p>
                 Success! You may now head <Link to="/">back to the homepage.</Link>
               </p>
             ) : (
-              <form onSubmit={handleFormSubmit}>
-                <input className="form-input" placeholder="Your username" name="name" type="text" value={formState.name} onChange={handleChange} />
-                <input className="form-input" placeholder="Your email" name="email" type="email" value={formState.email} onChange={handleChange} />
-                <input className="form-input" placeholder="******" name="password" type="password" value={formState.password} onChange={handleChange} />
+              <form onSubmit={handleFormSubmit} className="flex flex-col w-40">
+                <input className="p-1 rounded-lg border-2 border-[#669BBC]" placeholder="Name" name="name" type="text" value={formState.name} onChange={handleChange} />
+                <input className="p-1 rounded-lg border-2 border-[#669BBC]" placeholder="Email" name="email" type="email" value={formState.email} onChange={handleChange} />
+                <input className="p-1 rounded-lg border-2 border-[#669BBC]" placeholder="Password" name="password" type="password" value={formState.password} onChange={handleChange} />
                 {/* <input className="form-input" name="profile type" type='' value={formState.profileType} onChange={handleChange} /> */}
-                <select name="profileType" onChange={handleChange}>
+                <select className="p-2 rounded-lg border-2 border-[#669BBC]" name="profileType" onChange={handleChange}>
+                  <option value="">Profile Type</option>
                   <option value="teacher">Teacher</option>
                   <option value="student">Student</option>
                 </select>
-                <button className="btn btn-block btn-info ml-2" style={{ cursor: "pointer" }} type="submit">
+                <button className="p-1 border-4 border-[#669BBC] rounded-lg bg-[#C1121F] text-[#FDF0D5]" style={{ cursor: "pointer" }} type="submit">
                   Submit
                 </button>
               </form>
             )}
 
-            {error && <div className="my-3 p-3 bg-danger text-white">{error.message}</div>}
+            {error && <div className="my-3 p-3">{error.message}</div>}
           </div>
         </div>
       </div>
