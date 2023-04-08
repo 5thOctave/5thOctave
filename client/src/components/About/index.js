@@ -6,8 +6,10 @@ const About = () => {
   const navigate = useNavigate();
   return (
     <div className="flex flex-col items-center">
-      <h1 className="stylish text-3xl">What is 5th Octave?</h1>
-      <div className="text-center stylish text-xl w-1/2">We are musicians who are passionate about connecting the best music teachers with students so they can share their talents with anyone, anywhere using video chat</div>
+      <h1 className="stylish text-3xl font-bold">What is 5th Octave?</h1>
+      <div className="text-center stylish text-xl w-1/2">We are musicians who are passionate about using the power of technology to connect the best music teachers with students anywhere in the world</div>
+      <h2 className="stylish text-2xl font-bold">How it works</h2>
+      <div className="stylish text-xl">search classes, group/individual classes, video call, blah blah blah</div>
     </div>
   );
 };
