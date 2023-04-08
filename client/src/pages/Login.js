@@ -44,7 +44,7 @@ const Login = (props) => {
     <main className="p-8 stylish">
       <div className="flex justify-center">
         <div className="">
-          <h4 className="text-3xl font-bold text-center">Sign In</h4>
+          <h4 className="text-3xl font-bold text-center mb-2">Sign In</h4>
           <div className="">
             {data ? (
               <p>
@@ -53,7 +53,7 @@ const Login = (props) => {
             ) : (
               <form onSubmit={handleFormSubmit} className="flex flex-col w-40">
                 <input className="p-1 rounded-lg border-2 border-[#669BBC]" placeholder="Email" name="email" type="email" value={formState.email} onChange={handleChange} />
-                <input className="p-1 rounded-lg border-2 border-[#669BBC]" placeholder="Password" name="password" type="password" value={formState.password} onChange={handleChange} />
+                <input className="my-2 p-1 rounded-lg border-2 border-[#669BBC]" placeholder="Password" name="password" type="password" value={formState.password} onChange={handleChange} />
                 <button className="p-1 border-4 border-[#669BBC] rounded-lg bg-[#C1121F] text-[#FDF0D5]" style={{ cursor: "pointer" }} type="submit">
                   Submit
                 </button>
