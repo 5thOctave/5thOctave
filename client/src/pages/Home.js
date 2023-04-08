@@ -5,6 +5,7 @@ import ProfileList from "../components/ProfileList";
 
 import { QUERY_PROFILES } from "../utils/queries";
 import CourseList from "../components/CourseList";
+import About from "../components/About";
 
 const Home = () => {
   const { loading, data } = useQuery(QUERY_PROFILES);
@@ -25,6 +26,7 @@ const Home = () => {
           )}
         </div>
       </div>
+      <About />
     </main>
   );
 };
