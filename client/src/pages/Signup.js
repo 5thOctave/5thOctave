@@ -51,10 +51,10 @@ const Signup = () => {
 
   return (
     <main className="p-8 stylish">
-      <div>
-        <div className="flex flex-col">
-          <h4 className="text-3xl font-bold">Create your 5th Octave Profile!</h4>
-          <div>
+      <div className="flex justify-center">
+        <div className="">
+          <h4 className="text-3xl font-bold text-center">Create your 5th Octave Profile!</h4>
+          <div className="flex justify-center">
             {data ? (
               <p>
                 Success! You may now head <Link to="/">back to the homepage.</Link>

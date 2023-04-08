@@ -42,9 +42,9 @@ const Login = (props) => {
 
   return (
     <main className="p-8 stylish">
-      <div className="">
-        <div className="flex flex-col">
-          <h4 className="text-3xl font-bold">Sign In</h4>
+      <div className="flex justify-center">
+        <div className="">
+          <h4 className="text-3xl font-bold text-center">Sign In</h4>
           <div className="">
             {data ? (
               <p>
