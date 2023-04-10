@@ -6,7 +6,7 @@ const CourseList = ({ courses }) => {
     <div className="bg-[#FDF0D5]">
       <h2 className="stylish text-3xl font-bold ml-8">courses will display here</h2>
       {/* <h3 className="">{name}</h3> */}
-      <div className="flex-row justify-space-between my-4">
+      <div className="flex-row justify-between my-4">
         {courses &&
           courses.map((course) => (
             <div key={course._id} className="">

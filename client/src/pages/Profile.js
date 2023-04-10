@@ -4,6 +4,7 @@ import { Navigate, useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 
 import SkillsList from '../components/SkillsList';
+//Courses created / courses enrolled in???
 import CourseForm from '../components/CourseForm';
 
 import { QUERY_SINGLE_PROFILE, QUERY_ME } from '../utils/queries';
@@ -30,12 +31,12 @@ const Profile = () => {
   }
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <div className='stylish'>Loading...</div>;
   }
 
   if (!profile?.name) {
     return (
-      <h4>
+      <h4 className='stylish'>
         You need to be logged in to see your profile page. Use the navigation
         links above to sign up or log in!
       </h4>
@@ -44,19 +45,11 @@ const Profile = () => {
 
   return (
     <div>
-      <h2 className="card-header">
-        {profileId ? `${profile.name}'s` : 'Your'} friends have endorsed these
-        skills...
-      </h2>
+      <h2 className="stylish text-3xl">{profileId ? `${profile.name}'s` : "Your"} friends have endorsed these skills... / these are the courses you have created/enrolled in????</h2>
 
-      {profile.skills?.length > 0 && (
-        <SkillsList
-          skills={profile.skills}
-          isLoggedInUser={!profileId && true}
-        />
-      )}
+      {profile.skills?.length > 0 && <SkillsList skills={profile.skills} isLoggedInUser={!profileId && true} />}
 
-      <div className="my-4 p-4" style={{ border: '1px dotted #1a1a1a' }}>
+      <div className="my-4 p-4" style={{ border: "1px dotted #1a1a1a" }}>
         <CourseForm profileId={profile._id} />
       </div>
     </div>
