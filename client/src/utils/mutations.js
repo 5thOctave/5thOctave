@@ -38,12 +38,12 @@ export const ADD_COURSE = gql`
   }
 `;
 
-export const REMOVE_SKILL = gql`
-  mutation removeSkill($skill: String!) {
-    removeSkill(skill: $skill) {
+export const REMOVE_COURSE = gql`
+  mutation removeCourse($course: String!) {
+    removeCourse(course: $course) {
       _id
-      name
-      skills
+      # name
+      # skills
     }
   }
 `;

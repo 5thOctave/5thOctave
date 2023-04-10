@@ -1,12 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const CourseList = ({ courses, name }) => {
-
+const CourseList = ({ courses }) => {
   return (
     <div className="bg-[#FDF0D5]">
-    <h2 className="stylish text-3xl font-bold ml-8">courses will display here</h2>
-      <h3 className="">{name}</h3>
+      <h2 className="stylish text-3xl font-bold ml-8">courses will display here</h2>
+      {/* <h3 className="">{name}</h3> */}
       <div className="flex-row justify-space-between my-4">
         {courses &&
           courses.map((course) => (
