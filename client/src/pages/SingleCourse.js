@@ -8,8 +8,12 @@ import { useQuery } from "@apollo/client";
 // import About from "../components/About";
 
 const SingleCourse = () => {
-//   const { loading, data } = useQuery(QUERY_PROFILES);
-//   const profiles = data?.profiles || [];
+  //   const { loading, data } = useQuery(QUERY_PROFILES);
+  //   const profiles = data?.profiles || [];
+
+  // TODO: THIS PAGE WILL HAVE DETAILS ON EACH COUSRSE
+  //AND ALSO A LINK TO THE PAYMENT PAGE
+  //OR A WAY TO MAKE THE STRIPE PAYMENT BOX APPEAR
 
   return (
     <main>
