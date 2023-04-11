@@ -12,7 +12,7 @@ const Header = () => {
     <div>
       <div className="bg-[#669BBC] flex flex-row flex-wrap justify-between p-8 items-center">
         <Link className="" to="/">
-          <h1 className="text-6xl stylish font-bold text-[#FDF0D5] logo">🎷5th Octave</h1>
+          <h1 className="text-6xl stylish logo">🎷5th Octave</h1>
         </Link>
         <form className="flex flex-row gap-2 items-center">
           <input className="border-2 rounded-lg stylish font-bold bg-[#FDF0D5]" type="text" />
