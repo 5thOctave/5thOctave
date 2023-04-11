@@ -25,17 +25,34 @@ export const LOGIN_USER = gql`
 `;
 
 export const ADD_COURSE = gql`
-  mutation addCourse($profileId: ID!, $name: String!, $level: String, $instrument: String, $description: String, $length: Int, $schedule: String) {
-    addCourse(profileId: $profileId, skill: $skill) {
+  mutation AddCourse($name: String!, $level: String, $instrument: String, $description: String, $length: Int, $schedule: String) {
+    addCourse(name: $name, level: $level, instrument: $instrument, description: $description, length: $length, schedule: $schedule) {
       _id
-      name
-      level
-      instrument
-      description
-      length
-      schedule
     }
   }
+`;
+
+export const UPDATE_COURSE = gql`
+mutation Mutation($courseId: ID!, $studentId: ID) {
+  updateCourse(courseId: $courseId, studentId: $studentId) {
+    _id
+    description
+    instrument
+    length
+    level
+    name
+    schedule
+    students {
+      _id
+      name
+    }
+    teacherId {
+      _id
+      email
+      name
+    }
+  }
+}
 `;
 
 export const REMOVE_COURSE = gql`

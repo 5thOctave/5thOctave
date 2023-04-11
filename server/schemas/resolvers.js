@@ -14,7 +14,7 @@ const resolvers = {
       return Profile.findOne({ _id: profileId });
     },
     course: async (parent, { courseId }) => {
-      return Course.findOne({ _id: courseId });
+      return Course.findOne({ _id: courseId }).populate("teacherId").populate("students");
     },
     // By adding context to our query, we can retrieve the logged in user without specifically searching for them
     me: async (parent, args, context) => {
@@ -67,7 +67,9 @@ const resolvers = {
     //   return Course.findOneAndUpdate({ _id: courseId }, { $pull: { courses: courseId } }, { new: true });
     // },
     updateCourse: async (parent, { courseId, studentId }) => {
-      return Course.findOneAndUpdate({ _id: courseId }, { $addToSet: { students: studentId } }, { new: true });
+      return Course.findOneAndUpdate({ _id: courseId }, { $addToSet: { students: studentId } }, { new: true })
+        .populate("teacherId")
+        .populate("students");
     },
   },
 };

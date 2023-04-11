@@ -1,25 +1,44 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useMutation } from "@apollo/client";
+import { useNavigate } from "react-router-dom";
 
 import { ADD_COURSE } from "../../utils/mutations";
 
 import Auth from "../../utils/auth";
 
 const CourseForm = ({ profileId }) => {
-  const [course, setCourse] = useState("");
+  const [formState, setFormState] = useState({
+    name: "",
+    level: "",
+    instrument: "",
+    description: "",
+    length: 0,
+    schedule: "",
+  });
 
   const [addCourse, { error }] = useMutation(ADD_COURSE);
+  const navigate = useNavigate();
+
+  const handleChange = (event) => {
+    let { name, value } = event.target;
+    if (name === "length") {
+      value = parseInt(value);
+    }
+    setFormState({
+      ...formState,
+      [name]: value,
+    });
+  };
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
 
     try {
       const data = await addCourse({
-        variables: { profileId },
+        variables: { ...formState },
       });
-
-      setCourse("");
+      navigate("/");
     } catch (err) {
       console.error(err);
     }
@@ -34,20 +53,19 @@ const CourseForm = ({ profileId }) => {
           {Auth.loggedIn() ? (
             <div className="flex">
               <form className="flex flex-col w-40" onSubmit={handleFormSubmit}>
-                <input placeholder="Name" value={course} className="p-1 rounded-lg border-2 border-[#669BBC]" onChange={(event) => setCourse(event.target.value)} />
-                <input placeholder="Instrument" value={course} className="my-2 p-1 rounded-lg border-2 border-[#669BBC]" onChange={(event) => setCourse(event.target.value)} />
-                <input placeholder="Level" value={course} className="p-1 rounded-lg border-2 border-[#669BBC]" onChange={(event) => setCourse(event.target.value)} />
-                <form className="" action="">
-                  <p>Level</p>
-                  <input type="radio" id="beginner" name="level" value="Beginner" /> <label for="beginner">Beginner</label>
-                  <br />
-                  <input type="radio" id="intermediate" name="level" value="Intermediate" /> <label for="intermediate">Intermediate</label>
-                  <br />
-                  <input type="radio" id="advanced" name="level" value="Advanced" /> <label for="advanced">Advanced</label>
-                </form>
-                <input placeholder="Description" value={course} className="my-2 p-1 rounded-lg border-2 border-[#669BBC]" onChange={(event) => setCourse(event.target.value)} />
-                <input placeholder="Length" value={course} className="p-1 rounded-lg border-2 border-[#669BBC]" onChange={(event) => setCourse(event.target.value)} />
-                <input placeholder="Schedule" value={course} className="my-2 p-1 rounded-lg border-2 border-[#669BBC]" onChange={(event) => setCourse(event.target.value)} />
+                <input name="name" placeholder="Name" value={formState.name} className="p-1 rounded-lg border-2 border-[#669BBC]" onChange={handleChange} />
+                <input name="instrument" placeholder="Instrument" value={formState.instrument} className="my-2 p-1 rounded-lg border-2 border-[#669BBC]" onChange={handleChange} />
+                {/* <input name="level" placeholder="Level" value={formState.level} className="p-1 rounded-lg border-2 border-[#669BBC]" onChange={handleChange} /> */}
+
+                <select className="my-2 p-2 rounded-lg border-2 border-[#669BBC]" name="level" onChange={handleChange}>
+                  <option value="">Level</option>
+                  <option value="Beginner">Beginner</option>
+                  <option value="Intermediate">Intermediate</option>
+                  <option value="Advanced">Advanced</option>
+                </select>
+                <input name="description" placeholder="Description" value={formState.description} className="my-2 p-1 rounded-lg border-2 border-[#669BBC]" onChange={handleChange} />
+                <input name="length" placeholder="Length" value={formState.length} className="p-1 rounded-lg border-2 border-[#669BBC]" onChange={handleChange} />
+                <input name="schedule" placeholder="Schedule" value={formState.schedule} className="my-2 p-1 rounded-lg border-2 border-[#669BBC]" onChange={handleChange} />
                 <button className="p-1 border-4 border-[#669BBC] rounded-lg bg-[#C1121F] text-[#FDF0D5]" type="submit">
                   Create!
                 </button>
