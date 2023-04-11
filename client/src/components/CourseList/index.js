@@ -35,13 +35,13 @@ const CourseList = ({ courses }) => {
           courses.map((course) => (
             <div key={course._id} className="">
               <Link className="" to={`/courses/${course._id}`}>
-              <div className="bg">
-                <img src="https://unsplash.it/400/200" alt=""></img>
-                <div className="overlay">
-                  <h2>{course.name}</h2>
-                  <p>{course.instrument}</p>
+                <div className="bg">
+                  <img src="https://unsplash.it/400/200" alt=""></img>
+                  <div className="overlay">
+                    <h2 className="stylish text-5xl font-bold text-[#FDF0D5]">{course.name}</h2>
+                    <p className="stylish text-3xl text-[#FDF0D5]">{course.instrument}</p>
+                  </div>
                 </div>
-              </div>
               </Link>
             </div>
           ))}

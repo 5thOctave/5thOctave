@@ -49,11 +49,11 @@ img,
 
 .bg .overlay h2 {
     padding-top: 20%;
-    font-family: 'Droid Serif', serif;
+    /* font-family: 'Droid Serif', serif; */
 }
 
 .bg .overlay p {
-    font-family: 'Julius Sans One', sans-serif;
+    /* font-family: 'Julius Sans One', sans-serif; */
 }
 
 .bg:hover .overlay {
