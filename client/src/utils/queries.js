@@ -33,6 +33,28 @@ export const QUERY_SINGLE_PROFILE = gql`
   }
 `;
 
+export const QUERY_COURSES = gql`
+  query Query {
+    courses {
+      _id
+      description
+      instrument
+      length
+      level
+      name
+      schedule
+      students {
+        _id
+        name
+      }
+      teacherId {
+        _id
+        name
+      }
+    }
+  }
+`;
+
 export const QUERY_SINGLE_COURSE = gql`
   query Query($courseId: ID!) {
     course(courseId: $courseId) {

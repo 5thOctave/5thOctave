@@ -33,26 +33,26 @@ export const ADD_COURSE = gql`
 `;
 
 export const UPDATE_COURSE = gql`
-mutation Mutation($courseId: ID!, $studentId: ID) {
-  updateCourse(courseId: $courseId, studentId: $studentId) {
-    _id
-    description
-    instrument
-    length
-    level
-    name
-    schedule
-    students {
+  mutation Mutation($courseId: ID!) {
+    updateCourse(courseId: $courseId) {
       _id
+      description
+      instrument
+      length
+      level
       name
-    }
-    teacherId {
-      _id
-      email
-      name
+      schedule
+      students {
+        _id
+        name
+      }
+      teacherId {
+        _id
+        email
+        name
+      }
     }
   }
-}
 `;
 
 export const REMOVE_COURSE = gql`

@@ -1,78 +1,65 @@
 [
   {
-    "name": "Brian Kernighan",
-    "email": "bkernighan@techfriends.dev",
-    "password": "password01",
-    "skills": ["AWK", "AMPL", "Unix"]
+    "name": "user",
+    "profileType": "teacher",
+    "email": "user@user.com",
+    "password": "password",
+    "courses": []
   },
   {
     "name": "Max Kanat-Alexander",
+    "profileType": "student",
     "email": "mkanatalexander@techfriends.dev",
-    "password": "password02",
-    "skills": ["Java", "Perl", "Apache", "Python"]
+    "password": "password1",  
+    "courses": []
   },
   {
     "name": "Amiko",
+    "profileType": "teacher",
     "email": "amiko@techfriends.dev",
-    "password": "password03",
-    "skills": ["NodeJS", "MySQL", "MongoDB", "React", "CSS-in-JS"]
+    "password": "password1",
+    "courses": []
   },
   {
     "name": "Kent Beck",
+    "profileType": "student",
     "email": "kbeck@techfriends.dev",
-    "password": "password04",
-    "skills": [
-      "Test-Driven Development",
-      "Extreme Programming",
-      "Software Design Patterns",
-      "JUnit"
-    ]
+    "password": "password1",
+    "courses": []
   },
   {
     "name": "Edward V. Berard",
+    "profileType": "teacher",
     "email": "evberard@techfriends.dev",
-    "password": "password05",
-    "skills": ["Object-Oriented Design"]
+    "password": "password1",
+    "courses": []
   },
   {
     "name": "Alan Kay",
+    "profileType": "student",
     "email": "akay@techfriends.dev",
-    "password": "password06",
-    "skills": [
-      "Graphical User Interface (GUI) Design",
-      "Jazz Guitar",
-      "Education"
-    ]
+    "password": "password1",
+    "courses": []
   },
   {
     "name": "C.A.R. Hoare",
+    "profileType": "teacher",
     "email": "choare@techfriends.dev",
-    "password": "password07",
-    "skills": ["Algorithms", "Quicksort", "Hoare Logic"]
+    "password": "password1",
+    "courses": []
   },
   {
     "name": "David Thomas",
+    "profileType": "student",
     "email": "dthomas@techfriends.dev",
-    "password": "password08",
-    "skills": ["Author", "Code Kata", "Ruby", "Pragmatic Programming"]
+    "password": "password1",
+    "courses": []
   },
   {
     "name": "Donald Knuth",
+    "profileType": "teacher",
     "email": "dknuth@techfriends.dev",
-    "password": "password09",
-    "skills": ["TeX Computer Typesetting", "Algorithms", "Author"]
-  },
-  {
-    "name": "Lernantino",
-    "email": "lernantino@techfriends.dev",
-    "password": "password10",
-    "skills": [
-      "JavaScript",
-      "CSS",
-      "HTML",
-      "Design Systems",
-      "Typescript",
-      "PWAs"
-    ]
+    "password": "password1",
+    "courses": []
   }
 ]

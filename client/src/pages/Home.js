@@ -1,15 +1,13 @@
 import React from "react";
 import { useQuery } from "@apollo/client";
 
-import ProfileList from "../components/ProfileList";
-
-import { QUERY_PROFILES } from "../utils/queries";
+import { QUERY_COURSES } from "../utils/queries";
 import CourseList from "../components/CourseList";
 import About from "../components/About";
 
 const Home = () => {
-  const { loading, data } = useQuery(QUERY_PROFILES);
-  const profiles = data?.profiles || [];
+  const { loading, data } = useQuery(QUERY_COURSES);
+  const course = data?.courses || [];
 
   return (
     <main>
@@ -22,7 +20,7 @@ const Home = () => {
             //   profiles={profiles}
             //   title="Here's the current roster of friends..."
             // />
-            <CourseList />
+            <CourseList courses={course} />
           )}
         </div>
       </div>

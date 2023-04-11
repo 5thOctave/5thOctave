@@ -1,10 +1,10 @@
 import React from "react";
 import { useQuery } from "@apollo/client";
 
-import { QUERY_SINGLE_COURSE, QUERY_ME } from "../utils/queries";
-import { Navigate, useParams } from "react-router-dom";
-// import { useMutation } from "@apollo/client";
-// import { UPDATE_COURSE } from "../utils/mutations";
+import { QUERY_SINGLE_COURSE } from "../utils/queries";
+import { useParams } from "react-router-dom";
+import { useMutation } from "@apollo/client";
+import { UPDATE_COURSE } from "../utils/mutations";
 
 const SingleCourse = () => {
   const { courseId } = useParams();
@@ -13,13 +13,22 @@ const SingleCourse = () => {
   // const profiles = data?.profiles || [];
   const course = data?.course || {};
 
-  // const [updateCourse, { error, data }] = useMutation(UPDATE_COURSE);
-
-
+  const [updateCourse, { error }] = useMutation(UPDATE_COURSE);
 
   if (loading) {
     return <div className="stylish">Loading...</div>;
   }
+
+  const handleCourseUpdate = async (event) => {
+    try {
+      const data = await updateCourse({
+        variables: { courseId: courseId },
+      });
+      console.log(data);
+    } catch (err) {
+      console.error(err);
+    }
+  };
 
   // TODO: THIS PAGE WILL HAVE DETAILS ON EACH COUSRSE
   //AND ALSO A LINK TO THE PAYMENT PAGE
@@ -36,15 +45,10 @@ const SingleCourse = () => {
         {course.schedule}
         {course.teacherId.name}
         {course.teacherId.email}
-        {course.students.map((student) => {
-          return (
-            <div>
-              {student.name}
-              {student.email}
-            </div>
-          );
+        {course.students.map((student, index) => {
+          return <div key={index}>{student.name}</div>;
         })}
-        <button className="p-1 border-4 border-[#669BBC] rounded-lg bg-[#C1121F] text-[#FDF0D5]" type="submit">
+        <button className="p-1 border-4 border-[#669BBC] rounded-lg bg-[#C1121F] text-[#FDF0D5]" type="submit" onClick={handleCourseUpdate}>
           Enroll!
         </button>
 

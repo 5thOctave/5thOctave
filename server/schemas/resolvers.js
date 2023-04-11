@@ -66,10 +66,9 @@ const resolvers = {
     // removeCourse: async (parent, { courseId }) => {
     //   return Course.findOneAndUpdate({ _id: courseId }, { $pull: { courses: courseId } }, { new: true });
     // },
-    updateCourse: async (parent, { courseId, studentId }) => {
-      return Course.findOneAndUpdate({ _id: courseId }, { $addToSet: { students: studentId } }, { new: true })
-        .populate("teacherId")
-        .populate("students");
+    updateCourse: async (parent, { courseId }, context) => {
+      await Course.findOneAndUpdate({ _id: courseId }, { $addToSet: { students: context.user._id } }, { new: true });
+      await Profile.findOneAndUpdate({ _id: context.user._id }, { $addToSet: { courses: courseId } }, { new: true });
     },
   },
 };
