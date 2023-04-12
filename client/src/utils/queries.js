@@ -78,6 +78,25 @@ export const QUERY_SINGLE_COURSE = gql`
   }
 `;
 
+export const QUERY_INSTRUMENTS = gql`
+  query Instruments($instrument: String!) {
+    instruments(instrument: $instrument) {
+      _id
+      instrument
+      length
+      level
+      name
+      schedule
+      teacherId {
+        name
+      }
+      students {
+        name
+      }
+    }
+  }
+`;
+
 export const QUERY_ME = gql`
   query me {
     me {

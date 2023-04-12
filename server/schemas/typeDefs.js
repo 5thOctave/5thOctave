@@ -39,6 +39,7 @@ const typeDefs = gql`
     me: Profile
     courses: [Course]!
     course(courseId: ID!): Course
+    instruments(instrument: String!): [Course]!
   }
 
   type Mutation {

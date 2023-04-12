@@ -16,6 +16,9 @@ const resolvers = {
     course: async (parent, { courseId }) => {
       return Course.findOne({ _id: courseId }).populate("teacherId").populate("students");
     },
+    instruments: async (parent, { instrument }) => {
+      return Course.find({instrument: instrument }).populate("teacherId").populate("students");
+    },
     // By adding context to our query, we can retrieve the logged in user without specifically searching for them
     me: async (parent, args, context) => {
       if (context.user) {
