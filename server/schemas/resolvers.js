@@ -17,7 +17,7 @@ const resolvers = {
       return Course.findOne({ _id: courseId }).populate("teacherId").populate("students");
     },
     instruments: async (parent, { instrument }) => {
-      return Course.find({instrument: instrument }).populate("teacherId").populate("students");
+      return Course.find({ instrument: instrument }).populate("teacherId").populate("students");
     },
     // By adding context to our query, we can retrieve the logged in user without specifically searching for them
     me: async (parent, args, context) => {
@@ -38,6 +38,8 @@ const resolvers = {
     addCourse: async (parent, args, context) => {
       if (context.user) {
         const course = await Course.create({ teacherId: context.user._id, ...args });
+        await Profile.findOneAndUpdate({ _id: context.user._id }, { $addToSet: { courses: course._id } }, { new: true });
+
         return { course };
       }
       throw new AuthenticationError("You need to be logged in!");

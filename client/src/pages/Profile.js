@@ -3,7 +3,7 @@ import React from "react";
 import { Navigate, useParams } from "react-router-dom";
 import { useQuery } from "@apollo/client";
 
-import SkillsList from "../components/SkillsList";
+import CourseList from "../components/CourseList";
 //Courses created / courses enrolled in???
 import CourseForm from "../components/CourseForm";
 
@@ -37,15 +37,25 @@ const Profile = () => {
 
   return (
     <div>
-      <h2 className="stylish text-3xl">{profileId ? `${profile.name}'s` : "Your"} friends have endorsed these skills... / these are the courses you have created/enrolled in????</h2>
-
-      {profile.skills?.length > 0 && <SkillsList skills={profile.skills} isLoggedInUser={!profileId && true} />}
-
+      <h2 className="stylish">Welcome, {profile.name}!</h2>
       {profile.profileType === "teacher" ? (
-        <div className="my-4 p-4" style={{ border: "1px dotted #1a1a1a" }}>
-          <CourseForm profileId={profile._id} />
+        <>
+          <div>
+            <h2> Classes You're instructing</h2>
+            <div className="col-12 col-md-10 my-3">{loading ? <div>Loading...</div> : <CourseList courses={profile.courses} />}</div>
+          </div>
+          <div className="my-4 p-4" style={{ border: "1px dotted #1a1a1a" }}>
+            <CourseForm profileId={profile._id} />
+          </div>
+        </>
+      ) : (
+        <div>
+          <div>
+            <h2> Classes You're enrolled in</h2>
+            <div className="col-12 col-md-10 my-3">{loading ? <div>Loading...</div> : <CourseList courses={profile.courses} />}</div>
+          </div>
         </div>
-      ) : null}
+      )}
     </div>
   );
 };

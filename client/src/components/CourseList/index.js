@@ -32,7 +32,7 @@ const CourseList = ({ courses }) => {
     <div className="container">
       <div className="flex-row justify-between my-4">
         {courses &&
-          courses.map((course) => (
+          courses?.map((course) => (
             <div key={course._id} className="">
               <Link className="" to={`/courses/${course._id}`}>
                 <div className="bg">
