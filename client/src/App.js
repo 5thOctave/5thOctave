@@ -11,6 +11,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import PageNotFound from "./pages/PageNotFound";
 import SingleCourse from "./pages/SingleCourse";
+import Checkout from "./pages/Checkout";
 
 const httpLink = createHttpLink({
   uri: "/graphql",
@@ -48,6 +49,7 @@ function App() {
               <Route path="/profiles/:profileId" element={<Profile />} />
               <Route path="/courses/:courseId" element={<SingleCourse />} />
               <Route path="/*" element={<PageNotFound />} />
+              <Route path="/checkout" element={<Checkout />} />
             </Routes>
           </div>
           <Footer />
