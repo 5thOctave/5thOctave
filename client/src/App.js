@@ -51,7 +51,7 @@ function App() {
               <Route path="/courses/:courseId" element={<SingleCourse />} />
               <Route path="/*" element={<PageNotFound />} />
               <Route path="/checkout" element={<Checkout />} />
-              <Route path="/:instrument" element={<Results />} />
+              <Route path="/instrument/:instrument" element={<Results />} />
             </Routes>
           </div>
           <Footer />

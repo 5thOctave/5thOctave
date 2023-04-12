@@ -1,22 +1,18 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { useQuery } from "@apollo/client";
-import { QUERY_INSTRUMENTS } from "../../utils/queries";
-import CourseList from "../../components/CourseList";
-
+import { useNavigate } from "react-router-dom";
 import Auth from "../../utils/auth";
 
 const Header = () => {
-  const { loading, data } = useQuery(QUERY_INSTRUMENTS, { variables: { instrument: instrument } });
-  const course = data?.courses || [];
+  const navigate = useNavigate();
   const logout = (event) => {
     event.preventDefault();
     Auth.logout();
   };
 
   const instrumentFilter = (event) => {
-    const { instrument } = event.target;
-    console.log(instrument);
+    const instrument = event.target.value;
+    navigate(`/instrument/${instrument}`);
   };
 
   return (
@@ -29,7 +25,7 @@ const Header = () => {
           <input className="border-2 rounded-lg stylish font-bold bg-[#FDF0D5]" type="text" />
           <button className="border-4 border-[#FDF0D5] rounded-lg bg-[#C1121F] p-2 text-[#FDF0D5] stylish">Search</button>
         </form> */}
-        <select className="my-2 p-2 rounded-lg border-2 border-[#669BBC]" name="level" onChange={instrumentFilter}>
+        <select className="my-2 p-2 rounded-lg border-2 border-[#669BBC]" onChange={instrumentFilter}>
           <option value="">Filter By Instrument</option>
           <option value="Piano">Piano</option>
           <option value="Guitar">Guitar</option>
@@ -56,13 +52,6 @@ const Header = () => {
             </div>
           )}
         </div>
-      </div>
-      <div className="col-12 col-md-10 my-3">
-        {loading ? (
-          <div>Loading...</div>
-        ) : (
-          <CourseList courses={course} />
-        )}
       </div>
     </div>
   );
