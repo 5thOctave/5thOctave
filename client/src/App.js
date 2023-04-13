@@ -13,6 +13,7 @@ import PageNotFound from "./pages/PageNotFound";
 import SingleCourse from "./pages/SingleCourse";
 import Checkout from "./pages/Checkout";
 import Results from "./pages/Results";
+import Confirmation from "./pages/Confirmation";
 
 const httpLink = createHttpLink({
   uri: "/graphql",
@@ -52,6 +53,7 @@ function App() {
               <Route path="/*" element={<PageNotFound />} />
               <Route path="/checkout" element={<Checkout />} />
               <Route path="/instrument/:instrument" element={<Results />} />
+              <Route path="/confirmation" element={<Confirmation />} />
             </Routes>
           </div>
           <Footer />
