@@ -48,7 +48,7 @@ const SingleCourse = () => {
           </h4>
         </div>
         <div className="flex flex-row justify-center mb-4">
-          <div className="mr-12">
+          <div className="">
             <p className="text-xl font-semibold">
               <span className="font-bold text-[#669BBC]">About:</span> {course.description}
             </p>
@@ -59,7 +59,7 @@ const SingleCourse = () => {
               <span className="font-bold text-[#669BBC]">Schedule:</span> {course.schedule}
             </p>
           </div>
-          <div className="">
+          <div className="mx-12">
             <p className="text-lg font-semibold">
               <span className="font-bold text-[#669BBC]">Teacher:</span> {course.teacherId.name}
             </p>
@@ -69,6 +69,14 @@ const SingleCourse = () => {
             {/* {course.students.map((student, index) => {
             return <div key={index}>{student.name}</div>;
           })} */}
+          </div>
+          <div className="">
+            <p className="text-lg font-semibold">
+              <span className="font-bold text-[#669BBC]">Lessons:</span> 8
+            </p>
+            <p className="text-lg font-semibold">
+              <span className="font-bold text-[#669BBC]">Price:</span> $400
+            </p>
           </div>
         </div>
         <div className="mx-12">

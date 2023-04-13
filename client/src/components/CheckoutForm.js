@@ -53,7 +53,7 @@ export default function CheckoutForm() {
       elements,
       confirmParams: {
         // Make sure to change this to your payment completion page
-        return_url: "http://localhost:3000",
+        return_url: "/",
       },
     });
 
@@ -76,14 +76,19 @@ export default function CheckoutForm() {
   };
 
   return (
-    <form id="payment-form" onSubmit={handleSubmit}>
-      {/* <LinkAuthenticationElement id="link-authentication-element" onChange={(e) => setEmail(e.target.value)} /> */}
-      <PaymentElement id="payment-element" options={paymentElementOptions} />
-      <button disabled={isLoading || !stripe || !elements} id="submit">
-        <span id="button-text">{isLoading ? <div className="spinner" id="spinner"></div> : "Pay now"}</span>
-      </button>
-      {/* Show any error or success messages */}
-      {message && <div id="payment-message">{message}</div>}
-    </form>
+    <div className="flex flex-col items-center stylish">
+      <h1 className="text-4xl font-bold text-center my-8 text-[#669BBC]">Please complete your payment </h1>
+      <form className="flex flex-col items-center" id="payment-form" onSubmit={handleSubmit}>
+        {/* <LinkAuthenticationElement id="link-authentication-element" onChange={(e) => setEmail(e.target.value)} /> */}
+        <PaymentElement id="payment-element" options={paymentElementOptions} />
+        <div>
+          <button disabled={isLoading || !stripe || !elements} id="submit" className="my-2 p-2 border-4 border-[#669BBC] rounded-lg bg-[#C1121F] text-[#FDF0D5] font-bold text-xl">
+            <span id="button-text">{isLoading ? <div className="spinner" id="spinner"></div> : "Pay now"}</span>
+          </button>
+        </div>
+        {/* Show any error or success messages */}
+        {message && <div id="payment-message">{message}</div>}
+      </form>
+    </div>
   );
 }
