@@ -39,26 +39,40 @@ const SingleCourse = () => {
     <main className="stylish">
       <div className="flex flex-col mt-8 items-center">
         <div className="mb-4">
-          <h2 className="text-3xl font-bold">{course.name}</h2>
-          <h3 className="text-2xl font-bold">Instrument: {course.instrument}</h3>
-          <h4 className="text-2xl font-bold">Level: {course.level}</h4>
+          <h2 className="text-3xl font-bold text-[#669BBC]">{course.name}</h2>
+          <h3 className="text-2xl font-semibold">
+            <span className="font-bold text-[#669BBC]">Instrument:</span> {course.instrument}
+          </h3>
+          <h4 className="text-2xl font-semibold">
+            <span className="font-bold text-[#669BBC] ">Level:</span> {course.level}
+          </h4>
         </div>
         <div className="flex flex-row justify-center mb-4">
           <div className="mr-12">
-            <p className="text-xl font-bold">About: {course.description}</p>
-            <p className="text-lg font-bold">Class Length: {course.length} minutes</p>
-            <p className="text-lg font-bold">Schedule: {course.schedule}</p>
+            <p className="text-xl font-semibold">
+              <span className="font-bold text-[#669BBC]">About:</span> {course.description}
+            </p>
+            <p className="text-lg font-semibold">
+              <span className="font-bold text-[#669BBC]">Class Length:</span> {course.length} minutes
+            </p>
+            <p className="text-lg font-semibold">
+              <span className="font-bold text-[#669BBC]">Schedule:</span> {course.schedule}
+            </p>
           </div>
           <div className="">
-            <p className="text-lg font-bold">Teacher: {course.teacherId.name}</p>
-            <p className="text-lg font-bold">Contact: {course.teacherId.email}</p>
+            <p className="text-lg font-semibold">
+              <span className="font-bold text-[#669BBC]">Teacher:</span> {course.teacherId.name}
+            </p>
+            <p className="text-lg font-semibold">
+              <span className="font-bold text-[#669BBC]">Contact:</span> {course.teacherId.email}
+            </p>
             {/* {course.students.map((student, index) => {
             return <div key={index}>{student.name}</div>;
           })} */}
           </div>
         </div>
         <div className="mx-12">
-          <button className="p-1 border-4 border-[#669BBC] rounded-lg bg-[#C1121F] text-[#FDF0D5] font-bold" type="submit" onClick={handleCourseUpdate}>
+          <button className="p-2 border-4 border-[#669BBC] rounded-lg bg-[#C1121F] text-[#FDF0D5] font-bold text-xl" type="submit" onClick={handleCourseUpdate}>
             Enroll!
           </button>
         </div>
