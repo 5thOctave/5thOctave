@@ -8,6 +8,7 @@ const Header = () => {
   const logout = (event) => {
     event.preventDefault();
     Auth.logout();
+    // navigate(`/`);
   };
 
   const instrumentFilter = (event) => {

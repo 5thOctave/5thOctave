@@ -46,29 +46,35 @@ const CourseForm = ({ profileId }) => {
 
   return (
     <div className="p-8 stylish">
-      <div className="flex justify-center">
+      <div className="flex flex-col items-center">
         <div className="">
-          <h4 className="text-3xl font-bold text-center mb-2">Create a new course!</h4>
+          <h4 className="text-4xl font-bold text-center mb-2 text-[#669BBC]">Create a new course!</h4>
 
           {Auth.loggedIn() ? (
-            <div className="flex">
-              <form className="flex flex-col w-40" onSubmit={handleFormSubmit}>
-                <input name="name" placeholder="Name" value={formState.name} className="p-1 rounded-lg border-2 border-[#669BBC]" onChange={handleChange} />
-                <input name="instrument" placeholder="Instrument" value={formState.instrument} className="my-2 p-1 rounded-lg border-2 border-[#669BBC]" onChange={handleChange} />
-                {/* <input name="level" placeholder="Level" value={formState.level} className="p-1 rounded-lg border-2 border-[#669BBC]" onChange={handleChange} /> */}
-
-                <select className="my-2 p-2 rounded-lg border-2 border-[#669BBC]" name="level" onChange={handleChange}>
-                  <option value="">Level</option>
-                  <option value="Beginner">Beginner</option>
-                  <option value="Intermediate">Intermediate</option>
-                  <option value="Advanced">Advanced</option>
-                </select>
-                <input name="description" placeholder="Description" value={formState.description} className="my-2 p-1 rounded-lg border-2 border-[#669BBC]" onChange={handleChange} />
-                <input name="length" placeholder="Length" value={formState.length} className="p-1 rounded-lg border-2 border-[#669BBC]" onChange={handleChange} />
-                <input name="schedule" placeholder="Schedule" value={formState.schedule} className="my-2 p-1 rounded-lg border-2 border-[#669BBC]" onChange={handleChange} />
-                <button className="p-1 border-4 border-[#669BBC] rounded-lg bg-[#C1121F] text-[#FDF0D5]" type="submit">
-                  Create!
-                </button>
+            <div className="flex flex-col mt-8 items-center">
+              <form className="w-40 font-bold text-xl" onSubmit={handleFormSubmit}>
+                <div className="flex flex-row justify-center mb-4">
+                  <div className="mr-12">
+                    <input name="name" placeholder="Name" value={formState.name} className="p-1 rounded-lg border-2 border-[#669BBC]" onChange={handleChange} />
+                    <input name="instrument" placeholder="Instrument" value={formState.instrument} className="my-2 p-1 rounded-lg border-2 border-[#669BBC]" onChange={handleChange} />
+                    <select className="my-2 p-2 rounded-lg border-2 border-[#669BBC]" name="level" onChange={handleChange}>
+                      <option value="">Level</option>
+                      <option value="Beginner">Beginner</option>
+                      <option value="Intermediate">Intermediate</option>
+                      <option value="Advanced">Advanced</option>
+                    </select>
+                  </div>
+                  <div>
+                    <input name="description" placeholder="Description" value={formState.description} className="mb-2 p-1 rounded-lg border-2 border-[#669BBC]" onChange={handleChange} />
+                    <input name="length" placeholder="Length" value={formState.length} className="p-1 rounded-lg border-2 border-[#669BBC]" onChange={handleChange} />
+                    <input name="schedule" placeholder="Schedule" value={formState.schedule} className="my-2 p-1 rounded-lg border-2 border-[#669BBC]" onChange={handleChange} />
+                  </div>
+                </div>
+                <div className="mx-12">
+                  <button className="p-1 border-4 border-[#669BBC] rounded-lg bg-[#C1121F] text-[#FDF0D5]" type="submit">
+                    Create!
+                  </button>
+                </div>
               </form>
             </div>
           ) : (

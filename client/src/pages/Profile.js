@@ -36,22 +36,22 @@ const Profile = () => {
   }
 
   return (
-    <div>
-      <h2 className="stylish">Welcome, {profile.name}!</h2>
+    <div className="stylish">
+      <h2 className="text-center mt-8 text-4xl font-bold text-[#669BBC]">Welcome, {profile.name}!</h2>
       {profile.profileType === "teacher" ? (
-        <>
-          <div>
-            <h2> Classes You're instructing</h2>
+        <div className="flex flex-col justify-center">
+          <div className="">
+            <h2 className="ml-8 text-3xl font-semibold text-[#669BBC]"> Classes you're instructing</h2>
             <div className="col-12 col-md-10 my-3">{loading ? <div>Loading...</div> : <CourseList courses={profile.courses} />}</div>
           </div>
-          <div className="my-4 p-4" style={{ border: "1px dotted #1a1a1a" }}>
+          <div className="">
             <CourseForm profileId={profile._id} />
           </div>
-        </>
+        </div>
       ) : (
         <div>
-          <div>
-            <h2> Classes You're enrolled in</h2>
+          <div className="ml-8 flex flex-col">
+            <h2 className="text-3xl font-semibold text-[#669BBC]"> Classes You're enrolled in</h2>
             <div className="col-12 col-md-10 my-3">{loading ? <div>Loading...</div> : <CourseList courses={profile.courses} />}</div>
           </div>
         </div>
