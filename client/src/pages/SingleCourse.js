@@ -1,10 +1,8 @@
 import React from "react";
-import { useQuery } from "@apollo/client";
+import { useQuery, useMutation } from "@apollo/client";
 import { QUERY_SINGLE_COURSE } from "../utils/queries";
-import { useParams } from "react-router-dom";
-import { useMutation } from "@apollo/client";
+import { useParams, useNavigate } from "react-router-dom";
 import { UPDATE_COURSE } from "../utils/mutations";
-import { useNavigate } from "react-router-dom";
 
 const SingleCourse = () => {
   const navigate = useNavigate();
@@ -38,24 +36,35 @@ const SingleCourse = () => {
   //OR A WAY TO MAKE THE STRIPE PAYMENT BOX APPEAR
 
   return (
-    <main>
-      <div className="flex-row justify-center stylish">
-        {course.name}
-        {course.instrument}
-        {course.description}
-        {course.length}
-        {course.level}
-        {course.schedule}
-        {course.teacherId.name}
-        {course.teacherId.email}
-        {course.students.map((student, index) => {
-          return <div key={index}>{student.name}</div>;
-        })}
-        <button className="p-1 border-4 border-[#669BBC] rounded-lg bg-[#C1121F] text-[#FDF0D5]" type="submit" onClick={handleCourseUpdate}>
-          Enroll!
-        </button>
+    <main className="stylish">
+      <div className="flex flex-col mt-8 items-center">
+        <div className="mb-4">
+          <h2 className="text-3xl font-bold">{course.name}</h2>
+          <h3 className="text-2xl font-bold">Instrument: {course.instrument}</h3>
+          <h4 className="text-2xl font-bold">Level: {course.level}</h4>
+        </div>
+        <div className="flex flex-row justify-center mb-4">
+          <div className="mr-12">
+            <p className="text-xl font-bold">About: {course.description}</p>
+            <p className="text-lg font-bold">Class Length: {course.length} minutes</p>
+            <p className="text-lg font-bold">Schedule: {course.schedule}</p>
+          </div>
+          <div className="">
+            <p className="text-lg font-bold">Teacher: {course.teacherId.name}</p>
+            <p className="text-lg font-bold">Contact: {course.teacherId.email}</p>
+            {/* {course.students.map((student, index) => {
+            return <div key={index}>{student.name}</div>;
+          })} */}
+          </div>
+        </div>
+        <div className="mx-12">
+          <button className="p-1 border-4 border-[#669BBC] rounded-lg bg-[#C1121F] text-[#FDF0D5] font-bold" type="submit" onClick={handleCourseUpdate}>
+            Enroll!
+          </button>
+        </div>
+      </div>
 
-        {/* <div className="">
+      {/* <div className="">
           {loading ? (
             <div>Loading...</div>
           ) : (
@@ -66,7 +75,6 @@ const SingleCourse = () => {
             <CourseList />
           )}
         </div> */}
-      </div>
     </main>
   );
 };
