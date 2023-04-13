@@ -7,7 +7,7 @@ const PageNotFound = () => {
 
   return (
     <main className="flex justify-center mt-12">
-      <div className="stylish text-5xl font-bold">Sorry, this page does not exist</div>
+      <div className="stylish text-5xl font-bold text-[#669BBC]">Sorry, this page does not exist</div>
     </main>
   );
 };

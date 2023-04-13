@@ -6,10 +6,10 @@
     padding: 0;
 }
 
-.container {
+/* .cardHolder {
     width: 85vw;
     margin: 1rem auto;
-}
+} */
 
 .bg,
 .overlay {
@@ -23,8 +23,8 @@ img,
 }
 
 .bg {
-    float: left;
-    max-width: 31%;
+    /* float: left; */
+    /* max-width: 31%; */
     position: relative;
     margin: 0.5%;
 }
@@ -65,7 +65,7 @@ img,
     filter: blur(2px);
 }
 
-@media screen and (max-width: 1148px) {
+/* @media screen and (max-width: 1148px) {
     .bg {
         max-width: 48%;
         margin: 1%;
@@ -78,4 +78,4 @@ img,
         max-width: 80%;
         margin: 1% auto;
     }
-}
+} */
