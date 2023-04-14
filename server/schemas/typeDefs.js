@@ -17,7 +17,6 @@ const typeDefs = gql`
 
   type Course {
     _id: ID
-    name: String
     level: String
     instrument: String
     description: String
@@ -45,7 +44,7 @@ const typeDefs = gql`
   type Mutation {
     addProfile(name: String!, profileType: String, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
-    addCourse(name: String!, level: String, instrument: String, description: String, length: Int, schedule: String): Course
+    addCourse(instrument: String!, level: String, description: String, length: Int, schedule: String): Course
     updateCourse(courseId: ID!): Course
     removeProfile: Profile
   }

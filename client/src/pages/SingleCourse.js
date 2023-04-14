@@ -31,9 +31,16 @@ const SingleCourse = () => {
     }
   };
 
-  // TODO: THIS PAGE WILL HAVE DETAILS ON EACH COUSRSE
-  //AND ALSO A LINK TO THE PAYMENT PAGE
-  //OR A WAY TO MAKE THE STRIPE PAYMENT BOX APPEAR
+  // //function to count students enrolled in course
+  // const countStudents = () => {
+  //   let count = 0;
+  //   for (let i = 0; i < course.students.length; i++) {
+  //     count++;
+  //   }
+  //   return count;
+  // };
+
+  const countStudents = course.students.length;
 
   return (
     <main className="stylish">
@@ -77,6 +84,10 @@ const SingleCourse = () => {
             <p className="text-lg font-semibold">
               <span className="font-bold text-[#669BBC]">Price:</span> $400
             </p>
+            <p className="text-lg font-semibold">
+              <span className="font-bold text-[#669BBC]">Students Enrolled: </span>
+              {countStudents}
+            </p>
           </div>
         </div>
         <div className="mx-12">
@@ -85,18 +96,6 @@ const SingleCourse = () => {
           </button>
         </div>
       </div>
-
-      {/* <div className="">
-          {loading ? (
-            <div>Loading...</div>
-          ) : (
-            // <ProfileList
-            //   profiles={profiles}
-            //   title="Here's the current roster of friends..."
-            // />
-            <CourseList />
-          )}
-        </div> */}
     </main>
   );
 };

@@ -23,7 +23,6 @@ export const QUERY_SINGLE_PROFILE = gql`
         instrument
         length
         level
-        name
         schedule
         teacherId {
           name
@@ -41,7 +40,6 @@ export const QUERY_COURSES = gql`
       instrument
       length
       level
-      name
       schedule
       students {
         _id
@@ -63,7 +61,6 @@ export const QUERY_SINGLE_COURSE = gql`
       instrument
       length
       level
-      name
       schedule
       students {
         _id
@@ -85,7 +82,6 @@ export const QUERY_INSTRUMENTS = gql`
       instrument
       length
       level
-      name
       schedule
       teacherId {
         name
@@ -105,7 +101,6 @@ export const QUERY_ME = gql`
       profileType
       courses {
         _id
-        name
         level
         schedule
         length

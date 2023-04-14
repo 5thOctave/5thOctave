@@ -4,22 +4,21 @@ import "../../assets/css/CourseList.css";
 
 const CourseList = ({ courses }) => {
   return (
-
     <div className="m-auto my-3 flex flex-wrap justify-center gap-6">
-        {courses &&
-          courses?.map((course) => (
-            <div key={course._id} className="">
-              <Link className="" to={`/courses/${course._id}`}>
-                <div className="bg">
-                  <img src="https://unsplash.it/400/200" alt=""></img>
-                  <div className="overlay">
-                    <h2 className="stylish text-5xl font-bold text-[#FDF0D5]">{course.name}</h2>
-                    <p className="stylish text-3xl text-[#FDF0D5]">{course.instrument}</p>
-                  </div>
+      {courses &&
+        courses?.map((course) => (
+          <div key={course._id} className="">
+            <Link className="" to={`/courses/${course._id}`}>
+              <div className="bg">
+                <img src="https://unsplash.it/400/200" alt=""></img>
+                <div className="overlay">
+                  <h2 className="stylish text-5xl font-bold text-[#FDF0D5]">{course.instrument}</h2>
+                  <p className="stylish text-3xl text-[#FDF0D5]">{course.level}</p>
                 </div>
-              </Link>
-            </div>
-          ))}
+              </div>
+            </Link>
+          </div>
+        ))}
     </div>
   );
 };
