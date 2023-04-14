@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import { useMutation } from "@apollo/client";
 import { ADD_PROFILE } from "../utils/mutations";
@@ -7,6 +7,7 @@ import { ADD_PROFILE } from "../utils/mutations";
 import Auth from "../utils/auth";
 
 const Signup = () => {
+  const navigate = useNavigate();
   // const [selectedValue, setSelectedValue] = useState({
   //   profileType: "",
   // });
