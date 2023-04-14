@@ -26,11 +26,11 @@ const Header = () => {
           <option selected disabled>
             Search By Instrument
           </option>
-          <option value="Piano">Piano</option>
           <option value="Sitar">Sitar</option>
-          <option value="Trumpet">Trumpet</option>
           <option value="Banjo">Banjo</option>
           <option value="Saxophone">Saxophone</option>
+          <option value="Pedal Steel">Pedal Steel</option>
+          <option value="Flute">Flute</option>
         </select>
         <div>
           {Auth.loggedIn() ? (
