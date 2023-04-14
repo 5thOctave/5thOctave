@@ -37,6 +37,10 @@ const courseSchema = new Schema({
     type: String,
     // required: true,
   },
+  image: {
+    type: String,
+    // required: true,
+  },
   //TODO: fix showing array of students in course
   students: [
     {

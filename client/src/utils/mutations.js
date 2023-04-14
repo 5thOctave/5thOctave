@@ -25,8 +25,8 @@ export const LOGIN_USER = gql`
 `;
 
 export const ADD_COURSE = gql`
-  mutation AddCourse($instrument: String!, $level: String, $description: String, $length: Int, $schedule: String) {
-    addCourse(instrument: $instrument, level: $level, description: $description, length: $length, schedule: $schedule) {
+  mutation AddCourse($instrument: String!, $level: String, $description: String, $length: Int, $schedule: String, $image: String) {
+    addCourse(instrument: $instrument, level: $level, description: $description, length: $length, schedule: $schedule, image: $image) {
       _id
     }
   }
@@ -41,6 +41,7 @@ export const UPDATE_COURSE = gql`
       length
       level
       schedule
+      image
       students {
         _id
         name

@@ -24,6 +24,7 @@ export const QUERY_SINGLE_PROFILE = gql`
         length
         level
         schedule
+        image
         teacherId {
           name
         }
@@ -41,6 +42,7 @@ export const QUERY_COURSES = gql`
       length
       level
       schedule
+      image
       students {
         _id
         name
@@ -62,6 +64,7 @@ export const QUERY_SINGLE_COURSE = gql`
       length
       level
       schedule
+      image
       students {
         _id
         name
@@ -83,6 +86,7 @@ export const QUERY_INSTRUMENTS = gql`
       length
       level
       schedule
+      image
       teacherId {
         name
       }
@@ -106,6 +110,7 @@ export const QUERY_ME = gql`
         length
         instrument
         description
+        image
         teacherId {
           name
         }

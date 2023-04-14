@@ -36,11 +36,9 @@ const SingleCourse = () => {
 
   const countStudents = course.students.length;
 
-
-
   return (
     <main className="stylish">
-      <div className="flex flex-col mt-8 items-center">
+      <div className="flex flex-col m-12 items-center border-[#669BBC] border-4 p-12 bg-white rounded-lg">
         <div className="mb-4">
           <h2 className="text-3xl font-bold text-[#669BBC]">{course.name}</h2>
           <h3 className="text-2xl font-semibold">

@@ -15,6 +15,7 @@ const CourseForm = ({ profileId }) => {
     description: "",
     length: 0,
     schedule: "",
+    image: "images/music.png",
   });
 
   const [addCourse, { error }] = useMutation(ADD_COURSE);

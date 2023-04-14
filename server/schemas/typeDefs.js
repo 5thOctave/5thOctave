@@ -23,6 +23,7 @@ const typeDefs = gql`
     teacherId: Profile
     length: Int
     schedule: String
+    image: String
     students: [Profile]
   }
 
@@ -44,7 +45,7 @@ const typeDefs = gql`
   type Mutation {
     addProfile(name: String!, profileType: String, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
-    addCourse(instrument: String!, level: String, description: String, length: Int, schedule: String): Course
+    addCourse(instrument: String!, level: String, description: String, length: Int, schedule: String, image: String): Course
     updateCourse(courseId: ID!): Course
     removeProfile: Profile
   }

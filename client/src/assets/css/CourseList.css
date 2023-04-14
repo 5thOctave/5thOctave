@@ -10,7 +10,10 @@
     width: 85vw;
     margin: 1rem auto;
 } */
-
+img {
+    width: 400px !important;
+    height: 200px !important;
+}
 .bg,
 .overlay {
     text-align: center;
