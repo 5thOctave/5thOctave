@@ -3,6 +3,7 @@ import { useQuery, useMutation } from "@apollo/client";
 import { QUERY_SINGLE_COURSE } from "../utils/queries";
 import { useParams, useNavigate } from "react-router-dom";
 import { UPDATE_COURSE } from "../utils/mutations";
+import Auth from "../utils/auth";
 
 const SingleCourse = () => {
   const navigate = useNavigate();
@@ -21,26 +22,21 @@ const SingleCourse = () => {
 
   const handleCourseUpdate = async (event) => {
     try {
-      const data = await updateCourse({
-        variables: { courseId: courseId },
-      });
-      console.log(data);
-      navigate("/checkout");
+      if (Auth.loggedIn()) {
+        const data = await updateCourse({
+          variables: { courseId: courseId },
+        });
+        console.log(data);
+        navigate("/checkout");
+      } else navigate("/login");
     } catch (err) {
       console.error(err);
     }
   };
 
-  // //function to count students enrolled in course
-  // const countStudents = () => {
-  //   let count = 0;
-  //   for (let i = 0; i < course.students.length; i++) {
-  //     count++;
-  //   }
-  //   return count;
-  // };
-
   const countStudents = course.students.length;
+
+
 
   return (
     <main className="stylish">
