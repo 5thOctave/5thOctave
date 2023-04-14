@@ -66,7 +66,7 @@ const SingleCourse = () => {
               <span className="font-bold text-[#669BBC]">Teacher:</span> {course.teacherId.name}
             </p>
             <p className="text-xl font-semibold">
-              <span className="font-bold text-[#669BBC]">Contact:</span> {course.teacherId.email}
+              <span className="font-bold text-[#669BBC]">Contact:</span> <a href={"mailto:" + course.teacherId.email}>{course.teacherId.email}</a>
             </p>
           </div>
           <div className="w-1/3">
