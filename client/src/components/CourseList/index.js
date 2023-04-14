@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "../../assets/css/CourseList.css";
 
+
 const CourseList = ({ courses }) => {
   return (
     <div className="m-auto my-3 flex flex-wrap justify-center gap-6">
