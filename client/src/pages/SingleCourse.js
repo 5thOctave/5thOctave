@@ -39,17 +39,18 @@ const SingleCourse = () => {
   return (
     <main className="stylish flex justify-center">
       <div className="flex flex-col m-12 items-center border-[#669BBC] border-4 p-12 bg-[#F5F5F5] rounded-lg w-3/4">
-        <img className="rounded-lg drop-shadow-xl" src={course.image} alt="image of musical instrument"></img>
+        <img className="rounded-xl drop-shadow-xl" src={course.image} alt="image of musical instrument"></img>
         <div className="mb-4">
-          <h3 className="mt-4 text-4xl font-semibold">
+          {/* <h3 className="mt-4 text-4xl font-semibold">
             <span className="font-bold text-[#669BBC]">Instrument:</span> {course.instrument}
-          </h3>
+          </h3> */}
+          <h3 className="mt-4 text-4xl font-bold text-[#669BBC] text-center">{course.instrument}</h3>
           <h4 className="text-3xl font-semibold">
             <span className="font-bold text-[#669BBC] ">Level:</span> {course.level}
           </h4>
         </div>
         <div className="flex flex-row justify-center mb-4">
-          <div className="">
+          <div className="w-1/3">
             <p className="text-xl font-semibold">
               <span className="font-bold text-[#669BBC]">About:</span> {course.description}
             </p>
@@ -60,7 +61,7 @@ const SingleCourse = () => {
               <span className="font-bold text-[#669BBC]">Schedule:</span> {course.schedule}
             </p>
           </div>
-          <div className="mx-12">
+          <div className="w-1/3 mx-2">
             <p className="text-xl font-semibold">
               <span className="font-bold text-[#669BBC]">Teacher:</span> {course.teacherId.name}
             </p>
@@ -68,7 +69,7 @@ const SingleCourse = () => {
               <span className="font-bold text-[#669BBC]">Contact:</span> {course.teacherId.email}
             </p>
           </div>
-          <div className="">
+          <div className="w-1/3">
             <p className="text-xl font-semibold">
               <span className="font-bold text-[#669BBC]">Lessons:</span> 8
             </p>

@@ -12,9 +12,7 @@ const Home = () => {
   return (
     <main>
       <div className="flex flex-col justify-center mb-4">
-        {/* <div className="col-12 col-md-10 my-3"> */}
-        {loading ? <div>Loading...</div> : <CourseList courses={course} />}
-        {/* </div> */}
+        {loading ? <div className="stylish text-2xl font-bold">Loading...</div> : <CourseList courses={course} />}
       </div>
       <About />
     </main>

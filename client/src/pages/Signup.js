@@ -65,7 +65,6 @@ const Signup = () => {
                 <input className="p-1 rounded-lg border-2 border-[#669BBC]" placeholder="Name" name="name" type="text" value={formState.name} onChange={handleChange} />
                 <input className="my-2 p-1 rounded-lg border-2 border-[#669BBC]" placeholder="Email" name="email" type="email" value={formState.email} onChange={handleChange} />
                 <input className="p-1 rounded-lg border-2 border-[#669BBC]" placeholder="Password" name="password" type="password" value={formState.password} onChange={handleChange} />
-                {/* <input className="form-input" name="profile type" type='' value={formState.profileType} onChange={handleChange} /> */}
                 <select className="my-2 p-2 rounded-lg border-2 border-[#669BBC] font-bold text-xl" name="profileType" onChange={handleChange}>
                   <option value="">Profile Type</option>
                   <option value="teacher">Teacher</option>
