@@ -71,7 +71,7 @@ const Signup = () => {
                   <option value="teacher">Teacher</option>
                   <option value="student">Student</option>
                 </select>
-                <button className="p-1 border-4 border-[#669BBC] rounded-lg bg-[#C1121F] text-[#FDF0D5]" style={{ cursor: "pointer" }} type="submit">
+                <button className="p-1 border-4 border-[#669BBC] rounded-lg bg-[#C1121F] text-[#FDF0D5] drop-shadow-xl" style={{ cursor: "pointer" }} type="submit">
                   Submit
                 </button>
               </form>

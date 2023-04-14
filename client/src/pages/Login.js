@@ -54,7 +54,7 @@ const Login = (props) => {
               <form onSubmit={handleFormSubmit} className="flex flex-col w-40 font-bold text-xl">
                 <input className="p-1 rounded-lg border-2 border-[#669BBC]" placeholder="Email" name="email" type="email" value={formState.email} onChange={handleChange} />
                 <input className="my-2 p-1 rounded-lg border-2 border-[#669BBC]" placeholder="Password" name="password" type="password" value={formState.password} onChange={handleChange} />
-                <button className="p-1 border-4 border-[#669BBC] rounded-lg bg-[#C1121F] text-[#FDF0D5]" style={{ cursor: "pointer" }} type="submit">
+                <button className="p-1 border-4 border-[#669BBC] rounded-lg bg-[#C1121F] text-[#FDF0D5] drop-shadow-xl" style={{ cursor: "pointer" }} type="submit">
                   Submit
                 </button>
               </form>

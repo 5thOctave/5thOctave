@@ -82,7 +82,7 @@ export default function CheckoutForm() {
         {/* <LinkAuthenticationElement id="link-authentication-element" onChange={(e) => setEmail(e.target.value)} /> */}
         <PaymentElement id="payment-element" options={paymentElementOptions} />
         <div>
-          <button disabled={isLoading || !stripe || !elements} id="submit" className="my-2 p-2 border-4 border-[#669BBC] rounded-lg bg-[#C1121F] text-[#FDF0D5] font-bold text-xl">
+          <button disabled={isLoading || !stripe || !elements} id="submit" className="my-2 p-2 border-4 border-[#669BBC] rounded-lg bg-[#C1121F] text-[#FDF0D5] font-bold text-xl drop-shadow-xl">
             <span id="button-text">{isLoading ? <div className="spinner" id="spinner"></div> : "Pay now"}</span>
           </button>
         </div>

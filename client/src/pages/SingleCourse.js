@@ -37,15 +37,14 @@ const SingleCourse = () => {
   const countStudents = course.students.length;
 
   return (
-    <main className="stylish">
-      <div className="flex flex-col m-12 items-center border-[#669BBC] border-4 p-12 bg-white rounded-lg">
+    <main className="stylish flex justify-center">
+      <div className="flex flex-col m-12 items-center border-[#669BBC] border-4 p-12 bg-[#F5F5F5] rounded-lg w-3/4">
+        <img className="rounded-lg drop-shadow-xl" src={course.image} alt="image of musical instrument"></img>
         <div className="mb-4">
-          <img src={course.image} alt="image of musical instrument"></img>
-          <h2 className="text-3xl font-bold text-[#669BBC]">{course.name}</h2>
-          <h3 className="text-2xl font-semibold">
+          <h3 className="mt-4 text-4xl font-semibold">
             <span className="font-bold text-[#669BBC]">Instrument:</span> {course.instrument}
           </h3>
-          <h4 className="text-2xl font-semibold">
+          <h4 className="text-3xl font-semibold">
             <span className="font-bold text-[#669BBC] ">Level:</span> {course.level}
           </h4>
         </div>
@@ -54,39 +53,36 @@ const SingleCourse = () => {
             <p className="text-xl font-semibold">
               <span className="font-bold text-[#669BBC]">About:</span> {course.description}
             </p>
-            <p className="text-lg font-semibold">
+            <p className="text-xl font-semibold">
               <span className="font-bold text-[#669BBC]">Class Length:</span> {course.length} minutes
             </p>
-            <p className="text-lg font-semibold">
+            <p className="text-xl font-semibold">
               <span className="font-bold text-[#669BBC]">Schedule:</span> {course.schedule}
             </p>
           </div>
           <div className="mx-12">
-            <p className="text-lg font-semibold">
+            <p className="text-xl font-semibold">
               <span className="font-bold text-[#669BBC]">Teacher:</span> {course.teacherId.name}
             </p>
-            <p className="text-lg font-semibold">
+            <p className="text-xl font-semibold">
               <span className="font-bold text-[#669BBC]">Contact:</span> {course.teacherId.email}
             </p>
-            {/* {course.students.map((student, index) => {
-            return <div key={index}>{student.name}</div>;
-          })} */}
           </div>
           <div className="">
-            <p className="text-lg font-semibold">
+            <p className="text-xl font-semibold">
               <span className="font-bold text-[#669BBC]">Lessons:</span> 8
             </p>
-            <p className="text-lg font-semibold">
-              <span className="font-bold text-[#669BBC]">Price:</span> $400
+            <p className="text-xl font-semibold">
+              <span className="font-bold text-[#669BBC]">Price:</span> $500
             </p>
-            <p className="text-lg font-semibold">
+            <p className="text-xl font-semibold">
               <span className="font-bold text-[#669BBC]">Students Enrolled: </span>
               {countStudents}
             </p>
           </div>
         </div>
         <div className="mx-12">
-          <button className="p-2 border-4 border-[#669BBC] rounded-lg bg-[#C1121F] text-[#FDF0D5] font-bold text-xl" type="submit" onClick={handleCourseUpdate}>
+          <button className="p-2 border-4 border-[#669BBC] rounded-lg bg-[#C1121F] text-[#FDF0D5] font-bold text-xl drop-shadow-xl" type="submit" onClick={handleCourseUpdate}>
             Enroll!
           </button>
         </div>

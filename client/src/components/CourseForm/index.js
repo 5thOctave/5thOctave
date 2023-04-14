@@ -73,7 +73,7 @@ const CourseForm = ({ profileId }) => {
                   </div>
                 </div>
                 <div className="mx-12">
-                  <button className="p-1 border-4 border-[#669BBC] rounded-lg bg-[#C1121F] text-[#FDF0D5]" type="submit">
+                  <button className="p-1 border-4 border-[#669BBC] rounded-lg bg-[#C1121F] text-[#FDF0D5] drop-shadow-xl" type="submit">
                     Create!
                   </button>
                 </div>

@@ -7,10 +7,9 @@ const Confirmation = () => {
       <div className="text-5xl font-bold text-[#669BBC]">Hooray! Payment successful.</div>
       <div className="my-4 text-5xl font-bold text-[#669BBC]">You are now registered for your course.</div>
       <div className="text-5xl font-bold text-[#669BBC]">Happy learning!</div>
-
-      <Link to="/" className="my-4 p-2 border-4 border-[#669BBC] rounded-lg bg-[#C1121F] text-[#FDF0D5] font-bold text-xl">
-        Return Home
-      </Link>
+      <button className="my-4 p-2 border-4 border-[#669BBC] rounded-lg bg-[#C1121F] text-[#FDF0D5] font-bold text-xl drop-shadow-xl">
+        <Link to="/">Return Home</Link>
+      </button>
     </main>
   );
 };

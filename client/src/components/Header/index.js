@@ -20,9 +20,9 @@ const Header = () => {
     <div>
       <div className="bg-[#669BBC] flex flex-row flex-wrap justify-between p-8 items-center">
         <Link className="" to="/">
-          <h1 className="text-6xl stylish logo">🎷5th Octave</h1>
+          <h1 className="text-6xl stylish logo drop-shadow-xl">🎷5th Octave</h1>
         </Link>
-        <select className="my-2 p-2 rounded-lg border-4 border-[#C1121F] bg-[#FDF0D5] stylish font-bold text-lg" onChange={instrumentFilter}>
+        <select className="my-2 p-2 rounded-lg border-4 border-[#C1121F] bg-[#FDF0D5] stylish font-bold text-lg drop-shadow-xl" onChange={instrumentFilter}>
           <option selected disabled>
             Search By Instrument
           </option>
@@ -35,19 +35,19 @@ const Header = () => {
         <div>
           {Auth.loggedIn() ? (
             <>
-              <button className="border-4 border-[#FDF0D5] rounded-lg bg-[#C1121F] p-2 text-[#FDF0D5] stylish mr-8 font-bold">
+              <button className="border-4 border-[#FDF0D5] rounded-lg bg-[#C1121F] p-2 text-[#FDF0D5] stylish mr-8 font-bold drop-shadow-xl">
                 <Link to="/me">My Profile</Link>
               </button>
-              <button className="border-4 border-[#FDF0D5] rounded-lg bg-[#C1121F] p-2 text-[#FDF0D5] stylish font-bold" onClick={logout}>
+              <button className="border-4 border-[#FDF0D5] rounded-lg bg-[#C1121F] p-2 text-[#FDF0D5] stylish font-bold drop-shadow-xl" onClick={logout}>
                 Sign Out
               </button>
             </>
           ) : (
             <div className="">
-              <button className="border-4 border-[#FDF0D5] rounded-lg bg-[#C1121F] p-2 text-[#FDF0D5] stylish mr-8 font-bold">
+              <button className="border-4 border-[#FDF0D5] rounded-lg bg-[#C1121F] p-2 text-[#FDF0D5] stylish mr-8 font-bold drop-shadow-xl">
                 <Link to="/login">Sign In</Link>
               </button>
-              <button className="border-4 border-[#FDF0D5] rounded-lg bg-[#C1121F] p-2 text-[#FDF0D5] stylish font-bold">
+              <button className="border-4 border-[#FDF0D5] rounded-lg bg-[#C1121F] p-2 text-[#FDF0D5] stylish font-bold drop-shadow-xl">
                 <Link to="/signup">Join 5th Octave</Link>
               </button>
             </div>
