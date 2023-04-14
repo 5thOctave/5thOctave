@@ -9,13 +9,13 @@ import Auth from "../../utils/auth";
 
 const CourseForm = ({ profileId }) => {
   const [formState, setFormState] = useState({
-    name: "",
+    // name: "",
     level: "",
     instrument: "",
     description: "",
     length: 0,
     schedule: "",
-    image: "images/music.png",
+    image: "images/sitar.jpg",
   });
 
   const [addCourse, { error }] = useMutation(ADD_COURSE);
@@ -56,19 +56,20 @@ const CourseForm = ({ profileId }) => {
               <form className="w-40 font-bold text-xl" onSubmit={handleFormSubmit}>
                 <div className="flex flex-row justify-center mb-4">
                   <div className="mr-12">
-                    <input name="name" placeholder="Name" value={formState.name} className="p-1 rounded-lg border-2 border-[#669BBC]" onChange={handleChange} />
-                    <input name="instrument" placeholder="Instrument" value={formState.instrument} className="my-2 p-1 rounded-lg border-2 border-[#669BBC]" onChange={handleChange} />
+                    {/* <input name="name" placeholder="Name" value={formState.name} className="p-1 rounded-lg border-2 border-[#669BBC]" onChange={handleChange} /> */}
+                    <input name="instrument" placeholder="Instrument" value={formState.instrument} className="p-1 rounded-lg border-2 border-[#669BBC]" onChange={handleChange} />
                     <select className="my-2 p-2 rounded-lg border-2 border-[#669BBC]" name="level" onChange={handleChange}>
                       <option value="">Level</option>
                       <option value="Beginner">Beginner</option>
                       <option value="Intermediate">Intermediate</option>
                       <option value="Advanced">Advanced</option>
                     </select>
+                    <input name="description" placeholder="Description" value={formState.description} className="p-1 rounded-lg border-2 border-[#669BBC]" onChange={handleChange} />
                   </div>
                   <div>
-                    <input name="description" placeholder="Description" value={formState.description} className="mb-2 p-1 rounded-lg border-2 border-[#669BBC]" onChange={handleChange} />
+                    <input name="schedule" placeholder="Schedule" value={formState.schedule} className="mb-4 p-1 rounded-lg border-2 border-[#669BBC]" onChange={handleChange} />
+                    <label>Length (minutes)</label>
                     <input name="length" placeholder="Length" value={formState.length} className="p-1 rounded-lg border-2 border-[#669BBC]" onChange={handleChange} />
-                    <input name="schedule" placeholder="Schedule" value={formState.schedule} className="my-2 p-1 rounded-lg border-2 border-[#669BBC]" onChange={handleChange} />
                   </div>
                 </div>
                 <div className="mx-12">
