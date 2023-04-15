@@ -7,6 +7,7 @@ We are musicians who are passionate about using the power of technology to conne
 # Table of Contents
 
 - [Link](#link)
+- [Technologies](#technologies)
 - [Usage](#usage)
 - [Contributing](#contributing)
 - [Tests](#tests)
@@ -16,6 +17,18 @@ We are musicians who are passionate about using the power of technology to conne
 
 Visit our deployed application:    
 [https://fifthoctave.herokuapp.com/](https://fifthoctave.herokuapp.com/)
+
+# Technologies
+
+- React
+- GraphQL
+- MongoDB & Mongoose
+- Stripe
+- JSX
+- Tailwind CSS
+- CSS
+- JavaScript
+- HTML
 
 # Usage
 
