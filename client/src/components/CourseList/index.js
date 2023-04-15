@@ -13,7 +13,7 @@ const CourseList = ({ courses }) => {
               <div className="bg">
                 <img src={course.image} alt="image of musical instrument"></img>
                 <div className="overlay">
-                  <h2 className="stylish text-5xl font-bold text-[#FDF0D5]">{course.instrument}</h2>
+                  <h2 className="stylish text-5xl md:font-bold sm:font-semibold text-[#FDF0D5]">{course.instrument}</h2>
                   <p className="stylish text-3xl text-[#FDF0D5]">{course.level}</p>
                 </div>
               </div>

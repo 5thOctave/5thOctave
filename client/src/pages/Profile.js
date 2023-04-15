@@ -1,14 +1,9 @@
 import React from "react";
-
 import { Navigate, useParams } from "react-router-dom";
 import { useQuery } from "@apollo/client";
-
 import CourseList from "../components/CourseList";
-//Courses created / courses enrolled in???
 import CourseForm from "../components/CourseForm";
-
 import { QUERY_SINGLE_PROFILE, QUERY_ME } from "../utils/queries";
-
 import Auth from "../utils/auth";
 
 const Profile = () => {
@@ -37,11 +32,11 @@ const Profile = () => {
 
   return (
     <div className="stylish mx-2">
-      <h2 className="text-center mt-8 text-4xl font-bold text-[#669BBC]">Welcome, {profile.name}!</h2>
+      <h2 className="text-center mt-8 text-4xl md:font-bold sm:font-semibold text-[#669BBC]">Welcome, {profile.name}!</h2>
       {profile.profileType === "teacher" ? (
         <div className="flex flex-col justify-center">
           <div className="">
-            <h2 className="ml-8 text-3xl font-semibold text-[#669BBC]"> Classes you're instructing</h2>
+            <h2 className="ml-8 text-3xl md:font-semibold text-[#669BBC]"> Classes you're instructing</h2>
             <div className="col-12 col-md-10 my-3">{loading ? <div>Loading...</div> : <CourseList courses={profile.courses} />}</div>
           </div>
           <div className="">
@@ -51,8 +46,8 @@ const Profile = () => {
       ) : (
         <div>
           <div className="ml-8 flex flex-col">
-            <h2 className="text-3xl font-semibold text-[#669BBC]"> Classes You're enrolled in</h2>
-            <div className="col-12 col-md-10 my-3">{loading ? <div>Loading...</div> : <CourseList courses={profile.courses} />}</div>
+            <h2 className="text-3xl md:font-semibold text-[#669BBC]"> Classes You're enrolled in</h2>
+            <div className="col-12 col-md-10 my-3">{loading ? <div className="stylish">Loading...</div> : <CourseList courses={profile.courses} />}</div>
           </div>
         </div>
       )}

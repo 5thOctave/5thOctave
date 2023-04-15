@@ -1,10 +1,7 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useMutation } from "@apollo/client";
-import { useNavigate } from "react-router-dom";
-
 import { ADD_COURSE } from "../../utils/mutations";
-
 import Auth from "../../utils/auth";
 
 const CourseForm = ({ profileId }) => {
@@ -49,11 +46,11 @@ const CourseForm = ({ profileId }) => {
     <div className="p-8 stylish mx-2">
       <div className="flex flex-col items-center">
         <div className="">
-          <h4 className="text-4xl font-bold text-center mb-2 text-[#669BBC]">Create a new course!</h4>
+          <h4 className="text-4xl md:font-semibold text-center mb-2 text-[#669BBC]">Create a new course!</h4>
 
           {Auth.loggedIn() ? (
             <div className="flex flex-col mt-8 items-center">
-              <form className="w-40 font-bold text-xl flex flex-col items-center" onSubmit={handleFormSubmit}>
+              <form className="w-40 md:font-semibold text-xl flex flex-col items-center" onSubmit={handleFormSubmit}>
                 <div className="flex flex-col md:flex-row mb-4">
                   <div className="md:mr-12">
                     {/* <input name="name" placeholder="Name" value={formState.name} className="p-1 rounded-lg border-2 border-[#669BBC]" onChange={handleChange} /> */}
