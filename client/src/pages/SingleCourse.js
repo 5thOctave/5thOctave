@@ -49,8 +49,8 @@ const SingleCourse = () => {
             <span className="font-bold text-[#669BBC] ">Level:</span> {course.level}
           </h4>
         </div>
-        <div className="flex flex-row justify-center mb-4">
-          <div className="w-1/3">
+        <div className="flex flex-col md:flex-row justify-center mb-4">
+          <div className="">
             <p className="text-xl font-semibold">
               <span className="font-bold text-[#669BBC]">About:</span> {course.description}
             </p>
@@ -61,7 +61,7 @@ const SingleCourse = () => {
               <span className="font-bold text-[#669BBC]">Schedule:</span> {course.schedule}
             </p>
           </div>
-          <div className="w-1/3 mx-2">
+          <div className="md:mx-2">
             <p className="text-xl font-semibold">
               <span className="font-bold text-[#669BBC]">Teacher:</span> {course.teacherId.name}
             </p>
@@ -69,7 +69,7 @@ const SingleCourse = () => {
               <span className="font-bold text-[#669BBC]">Contact:</span> <a href={"mailto:" + course.teacherId.email}>{course.teacherId.email}</a>
             </p>
           </div>
-          <div className="w-1/3">
+          <div className="">
             <p className="text-xl font-semibold">
               <span className="font-bold text-[#669BBC]">Lessons:</span> 8
             </p>

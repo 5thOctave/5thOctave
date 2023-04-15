@@ -46,15 +46,15 @@ const CourseForm = ({ profileId }) => {
   };
 
   return (
-    <div className="p-8 stylish">
+    <div className="p-8 stylish mx-2">
       <div className="flex flex-col items-center">
         <div className="">
           <h4 className="text-4xl font-bold text-center mb-2 text-[#669BBC]">Create a new course!</h4>
 
           {Auth.loggedIn() ? (
             <div className="flex flex-col mt-8 items-center">
-              <form className="w-40 font-bold text-xl" onSubmit={handleFormSubmit}>
-                <div className="flex flex-row justify-center mb-4">
+              <form className="w-40 font-bold text-xl flex flex-col items-center" onSubmit={handleFormSubmit}>
+                <div className="flex flex-col md:flex-row mb-4">
                   <div className="mr-12">
                     {/* <input name="name" placeholder="Name" value={formState.name} className="p-1 rounded-lg border-2 border-[#669BBC]" onChange={handleChange} /> */}
                     <input name="instrument" placeholder="Instrument" value={formState.instrument} className="p-1 rounded-lg border-2 border-[#669BBC]" onChange={handleChange} />

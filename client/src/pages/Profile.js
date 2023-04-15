@@ -36,7 +36,7 @@ const Profile = () => {
   }
 
   return (
-    <div className="stylish">
+    <div className="stylish mx-2">
       <h2 className="text-center mt-8 text-4xl font-bold text-[#669BBC]">Welcome, {profile.name}!</h2>
       {profile.profileType === "teacher" ? (
         <div className="flex flex-col justify-center">
