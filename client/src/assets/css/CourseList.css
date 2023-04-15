@@ -59,3 +59,10 @@ img,
     -webkit-filter: blur(2px);
     filter: blur(2px);
 }
+
+@media (max-width: 768px) {
+    img {
+        width: 100% !important;
+        height: 100% !important;
+    }
+}
