@@ -6,10 +6,6 @@
     padding: 0;
 }
 
-/* .cardHolder {
-    width: 85vw;
-    margin: 1rem auto;
-} */
 img {
     width: 400px !important;
     height: 200px !important;
@@ -26,8 +22,6 @@ img,
 }
 
 .bg {
-    /* float: left; */
-    /* max-width: 31%; */
     position: relative;
     margin: 0.5%;
 }
@@ -65,18 +59,3 @@ img,
     -webkit-filter: blur(2px);
     filter: blur(2px);
 }
-
-/* @media screen and (max-width: 1148px) {
-    .bg {
-        max-width: 48%;
-        margin: 1%;
-    }
-}
-
-@media screen and (max-width: 768px) {
-    .bg {
-        float: none;
-        max-width: 80%;
-        margin: 1% auto;
-    }
-} */

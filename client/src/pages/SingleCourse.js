@@ -4,6 +4,8 @@ import { QUERY_SINGLE_COURSE } from "../utils/queries";
 import { useParams, useNavigate } from "react-router-dom";
 import { UPDATE_COURSE } from "../utils/mutations";
 import Auth from "../utils/auth";
+import "../assets/css/CourseList.css";
+
 
 const SingleCourse = () => {
   const navigate = useNavigate();
@@ -11,7 +13,6 @@ const SingleCourse = () => {
   const { courseId } = useParams();
   const { loading, data } = useQuery(QUERY_SINGLE_COURSE, { variables: { courseId: courseId } });
 
-  // const profiles = data?.profiles || [];
   const course = data?.course || {};
 
   const [updateCourse, { error }] = useMutation(UPDATE_COURSE);

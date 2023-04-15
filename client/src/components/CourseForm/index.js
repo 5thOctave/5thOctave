@@ -55,7 +55,7 @@ const CourseForm = ({ profileId }) => {
             <div className="flex flex-col mt-8 items-center">
               <form className="w-40 font-bold text-xl flex flex-col items-center" onSubmit={handleFormSubmit}>
                 <div className="flex flex-col md:flex-row mb-4">
-                  <div className="mr-12">
+                  <div className="md:mr-12">
                     {/* <input name="name" placeholder="Name" value={formState.name} className="p-1 rounded-lg border-2 border-[#669BBC]" onChange={handleChange} /> */}
                     <input name="instrument" placeholder="Instrument" value={formState.instrument} className="p-1 rounded-lg border-2 border-[#669BBC]" onChange={handleChange} />
                     <select className="my-2 p-2 rounded-lg border-2 border-[#669BBC]" name="level" onChange={handleChange}>
