@@ -36,7 +36,7 @@ const Profile = () => {
       {profile.profileType === "teacher" ? (
         <div className="flex flex-col justify-center">
           <div className="">
-            <h2 className="ml-8 text-3xl md:font-semibold text-[#669BBC]"> Classes you're instructing</h2>
+            <h2 className="ml-8 text-3xl md:font-semibold text-[#669BBC]"> Classes you're instructing:</h2>
             <div className="col-12 col-md-10 my-3">{loading ? <div>Loading...</div> : <CourseList courses={profile.courses} />}</div>
           </div>
           <div className="">
@@ -46,7 +46,7 @@ const Profile = () => {
       ) : (
         <div>
           <div className="ml-8 flex flex-col">
-            <h2 className="text-3xl md:font-semibold text-[#669BBC]"> Classes You're enrolled in</h2>
+            <h2 className="text-3xl md:font-semibold text-[#669BBC]"> Classes You're enrolled in:</h2>
             <div className="col-12 col-md-10 my-3">{loading ? <div className="stylish">Loading...</div> : <CourseList courses={profile.courses} />}</div>
           </div>
         </div>
