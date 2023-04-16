@@ -6,7 +6,6 @@ import Auth from "../../utils/auth";
 
 const CourseForm = ({ profileId }) => {
   const [formState, setFormState] = useState({
-    // name: "",
     level: "",
     instrument: "",
     description: "",
@@ -53,7 +52,6 @@ const CourseForm = ({ profileId }) => {
               <form className="w-40 md:font-semibold text-xl flex flex-col items-center" onSubmit={handleFormSubmit}>
                 <div className="flex flex-col md:flex-row mb-4">
                   <div className="md:mr-12 mb-2">
-                    {/* <input name="name" placeholder="Name" value={formState.name} className="p-1 rounded-lg border-2 border-[#669BBC]" onChange={handleChange} /> */}
                     <input name="instrument" placeholder="Instrument" value={formState.instrument} className="p-1 rounded-lg border-2 border-[#669BBC]" onChange={handleChange} />
                     <select className="my-2 p-2 rounded-lg border-2 border-[#669BBC]" name="level" onChange={handleChange}>
                       <option value="">Level</option>
