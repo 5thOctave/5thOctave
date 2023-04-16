@@ -5,7 +5,7 @@ import "../../assets/css/CourseList.css";
 
 const CourseList = ({ courses }) => {
   return (
-    <div className="m-auto my-3 flex flex-wrap justify-center gap-6">
+    <div className="m-auto my-4 flex flex-wrap justify-center gap-6">
       {courses &&
         courses?.map((course) => (
           <div key={course._id} className="">
